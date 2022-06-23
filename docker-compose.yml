@@ -1,0 +1,27 @@
+version: '3.8'
+
+services:
+
+  db:
+    image: mysql:latest
+    platform: linux/amd64
+    container_name: db
+    ports:
+      - 3306:3306
+    volumes:
+      - ./docker/init_airports_med_lar.sql:/docker-entrypoint-initdb.d/init_airports_med_lar.sql
+    env_file:
+      - .env
+  
+  rest_api:
+    build: .
+    platform: linux/amd64
+    container_name: rest_api
+    ports:
+      - 50000:5000
+    depends_on:
+      - "db"
+    env_file:
+      - .env
+  
+    
