@@ -19,15 +19,11 @@ app.config['CORS_HEADERS'] = 'Access-Control-Allow-Origin: *'
 
 ## change to name of your database; add path if necessary
 mysql = MySQL()
-<<<<<<< HEAD
 app.config['MYSQL_DATABASE_USER'] = 'root'
-=======
-#app.config['MYSQL_DATABASE_USER'] = 'root'
->>>>>>> 035989c807a64564ac3dbd4b6ddd387493b51216
 app.config['MYSQL_DATABASE_PASSWORD'] = 'password'
 app.config['MYSQL_DATABASE_DB'] = 'airports'
 app.config['MYSQL_DATABASE_HOST'] = 'db'
-app.config['MYSQL_DATABASE_PORT'] = 3306
+app.config['MYSQL_DATABASE_PORT'] = 12500
 mysql.init_app(app)
 
 # this variable, db, will be used for all SQLAlchemy commands

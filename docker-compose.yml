@@ -7,7 +7,7 @@ services:
     platform: linux/amd64
     container_name: db
     ports:
-      - 3306:3306
+      - 12500:3306
     volumes:
       - ./docker/init_airports_med_lar.sql:/docker-entrypoint-initdb.d/init_airports_med_lar.sql
     env_file:
