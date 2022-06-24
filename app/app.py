@@ -19,7 +19,7 @@ app.config['CORS_HEADERS'] = 'Access-Control-Allow-Origin: *'
 
 ## change to name of your database; add path if necessary
 mysql = MySQL()
-#pp.config['MYSQL_DATABASE_USER'] = 'root'
+app.config['MYSQL_DATABASE_USER'] = 'root'
 app.config['MYSQL_DATABASE_PASSWORD'] = 'password'
 app.config['MYSQL_DATABASE_DB'] = 'airports'
 app.config['MYSQL_DATABASE_HOST'] = 'db'
@@ -77,7 +77,7 @@ def city(iata):
    return json.dumps(json_data)
 
 if __name__ == '__main__':
-   app.run(debug=True, host="0.0.0.0")
+   app.run(debug=True, host="0.0.0.0", port=3306)
 
 cursor.close()
 
