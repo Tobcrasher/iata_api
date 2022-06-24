@@ -19,7 +19,7 @@ app.config['CORS_HEADERS'] = 'Access-Control-Allow-Origin: *'
 
 ## change to name of your database; add path if necessary
 mysql = MySQL()
-#pp.config['MYSQL_DATABASE_USER'] = 'root'
+#app.config['MYSQL_DATABASE_USER'] = 'root'
 app.config['MYSQL_DATABASE_PASSWORD'] = 'password'
 app.config['MYSQL_DATABASE_DB'] = 'airports'
 app.config['MYSQL_DATABASE_HOST'] = 'db'
