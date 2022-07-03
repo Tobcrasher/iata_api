@@ -4,14 +4,16 @@ services:
 
   db:
     image: mysql:latest
+    restart: always
     platform: linux/amd64
     container_name: db
     ports:
-      - 12500:3306
+      - 3306:3306
     volumes:
       - ./docker/init_airports_med_lar.sql:/docker-entrypoint-initdb.d/init_airports_med_lar.sql
     env_file:
       - .env
+    
   
   rest_api:
     build: .
@@ -23,5 +25,5 @@ services:
       - "db"
     env_file:
       - .env
-  
+    
     

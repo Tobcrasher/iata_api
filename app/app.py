@@ -19,11 +19,12 @@ app.config['CORS_HEADERS'] = 'Access-Control-Allow-Origin: *'
 
 ## change to name of your database; add path if necessary
 mysql = MySQL()
+app.config['MYSQL_DATABASE_HOST'] = 'db'
 app.config['MYSQL_DATABASE_USER'] = 'root'
 app.config['MYSQL_DATABASE_PASSWORD'] = 'password'
+app.config['MYSQL_ROOT_PASSWORD'] = 'password'
 app.config['MYSQL_DATABASE_DB'] = 'airports'
-app.config['MYSQL_DATABASE_HOST'] = 'db'
-app.config['MYSQL_DATABASE_PORT'] = 12500
+app.config['MYSQL_DATABASE_PORT'] = 3306
 mysql.init_app(app)
 
 # this variable, db, will be used for all SQLAlchemy commands
@@ -77,7 +78,7 @@ def city(iata):
    return json.dumps(json_data)
 
 if __name__ == '__main__':
-   app.run(debug=True, host="0.0.0.0", port=3306)
+   app.run(debug=True, host="0.0.0.0")
 
 cursor.close()
 
