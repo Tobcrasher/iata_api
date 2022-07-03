@@ -26,6 +26,8 @@ app.config['MYSQL_DATABASE_HOST'] = 'db'
 app.config['MYSQL_DATABASE_PORT'] = 12500
 mysql.init_app(app)
 
+
+#test
 # this variable, db, will be used for all SQLAlchemy commands
 conn = mysql.connect()
 cursor =conn.cursor()
